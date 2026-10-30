@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+}
+
+/* Fundo geral da página no PC (simula uma moldura de celular elegante) */
+body {
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Moldura que restringe e centraliza o app no formato mobile */
+.mobile-frame {
+    width: 100%;
+    max-width: 480px; /* Trava a largura máxima como um celular topo de linha */
+    height: 100vh;
+    max-height: 900px; /* Evita que estique demais em telas altas de PC */
+    background: #000;
+    position: relative;
+    overflow-y: auto;
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.3);
+    border-radius: 0;
+}
+
+/* Em celulares reais, remove a borda arredondada e ocupa 100% */
+@media (max-width: 480px) {
+    .mobile-frame {
+        max-width: 100%;
+        max-height: 100vh;
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+.main {
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.main .image-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main .image-container .image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.main .image-container .image img {
+    width: 260px; /* Ajustado proporcionalmente para caber bem em celulares */
+    max-width: 100%;
+    height: auto;
+}
+
+.main .image-container h1 {
+    color: #00bcd4;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.main .image-container p {
+    color: #6b8285;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+    padding: 0 15px;
+}
+
+.main .input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%; /* Ocupa bem o espaço horizontal do celular */
+    max-width: 320px;
+    height: 55px;
+    border-radius: 25px;
+    background: rgb(202 253 255 / 15%);
+    border: 1px solid rgba(0, 188, 212, 0.4);
+    padding: 0 10px;
+}
+
+.main .input .talk {
+    background: #00bcd4;
+    outline: none;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+}
+
+.main .input .talk i {
+    font-size: 18px;
+    color: #000;
+}
+
+.main .input .content {
+    color: #aed0d0;
+    font-size: 13px;
+    flex-grow: 1;
+    text-align: center;
+    margin-right: 10px;
+}
